@@ -1,0 +1,15 @@
+<Solution>
+  <Folder Name="/Application/">
+    <Project Path="Application/WebApi_Func.Application.csproj" />
+  </Folder>
+  <Folder Name="/Domain/">
+    <Project Path="Domain/WebApi_Func.Domain.csproj" />
+  </Folder>
+  <Folder Name="/Infrastructure/">
+    <Project Path="Infrastructure/WebApi_Func.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/Tests/">
+    <Project Path="Tests/WebApi_Func.Tests.csproj" />
+  </Folder>
+  <Project Path="WebApi_Func.csproj" />
+</Solution>
