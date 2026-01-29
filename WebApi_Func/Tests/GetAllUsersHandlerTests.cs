@@ -17,7 +17,7 @@ namespace WebApi_Func.Tests
         {
             // Arrange
             var mockRepo = new Mock<IUserRepository>();
-            var query = new GetAllUsersQuery { Page = 1, PageSize = 10, SortOrder = "" };
+            var query = new GetAllUsersQuery { SortOrder = "" };
 
             var users = new List<User>
             {
@@ -25,7 +25,7 @@ namespace WebApi_Func.Tests
                 new User { Id = 2, Nome = "Teste 2" }
             };
 
-            mockRepo.Setup(r => r.GetAllAsync(1, 10, "")).ReturnsAsync(users);
+            mockRepo.Setup(r => r.GetAllAsync(0, 0, "")).ReturnsAsync(users);
 
             var handler = new GetAllUsersHandler(mockRepo.Object);
 
@@ -35,7 +35,7 @@ namespace WebApi_Func.Tests
             // Assert
             Assert.NotNull(result);
             Assert.Equal(2, result.Count());
-            mockRepo.Verify(r => r.GetAllAsync(1, 10, ""), Times.Once);
+            mockRepo.Verify(r => r.GetAllAsync(0, 0, ""), Times.Once);
         }
     }
 }
