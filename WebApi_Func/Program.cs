@@ -43,8 +43,6 @@ var app = builder.Build();
 app.UseSwagger();
 app.UseSwaggerUI();
 
-app.MapGet("/", () => "API on Docker is running!");
-
 // Auto-migrate on startup for convenience in dev/docker
 using (var scope = app.Services.CreateScope())
 {
@@ -58,6 +56,6 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-app.MapGet("/", () => "API is running");
+
 
 app.Run();
