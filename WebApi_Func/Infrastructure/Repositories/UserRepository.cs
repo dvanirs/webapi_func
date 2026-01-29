@@ -58,10 +58,15 @@ namespace WebApi_Func.Infrastructure.Repositories
                 _ => query.OrderBy(u => u.Id),
             };
 
-            return await query
-                .Skip((page - 1) * pageSize)
-                .Take(pageSize)
-                .ToListAsync();
+            
+            if (pageSize > 0)
+            {
+                query = query
+                    .Skip((page - 1) * pageSize)
+                    .Take(pageSize);
+            }
+
+            return await query.ToListAsync();
         }
 
         public async Task<User?> GetByIdAsync(int id)

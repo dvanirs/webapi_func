@@ -28,7 +28,7 @@ namespace WebApi_Func.Application.Queries.GetAllUsers
         /// <returns>Lista de DTOs de usuários.</returns>
         public async Task<IEnumerable<UserDto>> Handle(GetAllUsersQuery request, CancellationToken cancellationToken)
         {
-            var users = await _repository.GetAllAsync(request.Page, request.PageSize, request.SortOrder);
+            var users = await _repository.GetAllAsync(0, 0, request.SortOrder);
 
             // Manual mapping
             return users.Select(u => new UserDto
