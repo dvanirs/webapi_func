@@ -1,0 +1,6 @@
+DB_HOST=nomedohost
+DB_NAME=nomedobanco
+DB_USER=usuariodobanco
+DB_PASSWORD=senhadobanco
+DB_PORT=portadobanco
+ASPNETCORE_HTTP_PORTS=portahttp

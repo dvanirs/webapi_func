@@ -6,6 +6,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <DefaultItemExcludes>$(DefaultItemExcludes);Domain\**;Application\**;Infrastructure\**;Tests\**</DefaultItemExcludes>
+    <UserSecretsId>6c869ee1-e9e4-4ecd-93ba-423d10a39cdc</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
