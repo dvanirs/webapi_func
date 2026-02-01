@@ -6,6 +6,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    container_name: webapi_func
     ports:
       - "8080:8080"
     env_file:
@@ -13,6 +14,11 @@ services:
     depends_on:
       database:
         condition: service_healthy
+    networks:
+      - webapi_network
+    restart: on-failure
+    environment:
+      - DATABASE_URL=postgresql://postgres:postgres@database:5432/postgres_db
 
   database:
     image: postgres:16
@@ -31,6 +37,12 @@ services:
       retries: 5
     ports:
       - "15432:5432"
+    networks:
+      - webapi_network
 
 volumes:
   postgres_data:
+
+networks:
+  webapi_network:
+    driver: bridge
