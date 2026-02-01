@@ -12,7 +12,7 @@ services:
     environment:
       - ASPNETCORE_HTTP_PORTS=8080
       - DB_HOST=database
-      - DB_NAME=postgres_db
+      - DB_NAME=webapi_func_db
       - DB_USER=postgres
       - DB_PASSWORD=postgres
       - DB_PORT=5432
@@ -28,7 +28,7 @@ services:
     container_name: postgres_db
     restart: always
     environment:
-      POSTGRES_DB: postgres_db
+      POSTGRES_DB: webapi_func_db
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
     volumes:
